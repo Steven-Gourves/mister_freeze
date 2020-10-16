@@ -5,6 +5,18 @@ pipeline {
     
     parameters {
         string(name: 'URL', defaultValue: 'src', description: 'Give the URL where files are.')
+        choice(
+            name: 'LOG_LEVEL',
+            choices: [
+                'do_not_change', 
+                'TRACE', 
+                'DEBUG', 
+                'INFO', 
+                'WARN', 
+                'NONE'
+            ],
+            description: 'choice the log level for the robot framework\'s command line execution.'
+        )
     }
     
     options {
