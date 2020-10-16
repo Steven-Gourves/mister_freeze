@@ -36,7 +36,7 @@ pipeline {
                 expression { params.LOG_LEVEL == 'do_not_change' }
             }
             steps {
-                bat 'robot -d results --variable url:%WORKSPACE%\\%URL% --NoStatusRC robot.robot'
+                bat 'robot -d results-mister-freeze --variable url:%WORKSPACE%\\%URL% --NoStatusRC robot.robot'
             }
         }
         
@@ -45,7 +45,7 @@ pipeline {
                 expression { !(params.LOG_LEVEL == 'do_not_change') }
             }
             steps {
-                bat 'robot -L %LOG_LEVEL% -d results --variable url:%WORKSPACE%\\%URL% --NoStatusRC robot.robot'
+                bat 'robot -L %LOG_LEVEL% -d results-mister-freeze --variable url:%WORKSPACE%\\%URL% --NoStatusRC robot.robot'
             }
         }
     }
