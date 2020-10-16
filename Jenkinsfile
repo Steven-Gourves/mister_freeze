@@ -21,14 +21,14 @@ pipeline {
         
         stage('Test') {
             steps {
-                bat 'robot -d results/chamallow --variable url:%WORKSPACE%\\%URL% --NoStatusRC robot.robot'
+                bat 'robot -d results-mister-freeze --variable url:%WORKSPACE%\\%URL% --NoStatusRC robot.robot'
             }
         }
     }
     
     post {
         success {
-            archiveArtifacts artifacts: 'results/*'
+            archiveArtifacts artifacts: 'results-mister-freeze/*'
         }
     }
 }
